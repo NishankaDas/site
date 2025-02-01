@@ -718,7 +718,7 @@ nav {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* Show hamburger icon on mobile */
+    display: none; /* Show hamburger icon on mobile */
   }
 
   .nav-links {
