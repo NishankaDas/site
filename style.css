@@ -722,6 +722,7 @@ nav {
   }
 
   .nav-links {
+    display: none;
     position: absolute;
     top: 60px; /* Adjust based on header height */
     right: 0;
