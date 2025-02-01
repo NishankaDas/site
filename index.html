@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="Cat Logo">
+        <span> Portfolio</span>
+      </div>
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Navigation Menu -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education-skills">E & E</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <div class="home-background">
+      <div class="container">
+        <h1>It's Me Nishanka</h1>
+        <p>Cognitive Viewer of Computation</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me (নিঃশঙ্ক দাস)</h2>
+      <img src="PICTURE.png" alt="Profile Picture" class="profile-img">
+      <p>I am a passionate Quantum Computing Enthusiast with a deep interest in exploring how technology intersects with human cognition. My work spans Machine Learning, Graph Theory, Formal Languages, and Quantum Algorithms/Machine Learning, with a focus on understanding how computational systems and the mind connect. 
+      </p>
+      </section>
+
+ <!-- Education & Skills Section -->
+<section id="education-skills" class="section">
+  <div class="container">
+    <h2>Education & Experience</h2>
+    <div class="education-skills-grid">
+      <!-- Education Column -->
+      <div class="education">
+        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <ul>
+          <li>
+            <h4><i class="fas fa-university"></i> Bachelor of Science in Computer Science</h4>
+            <p>Ramakrishna Mission Vivekananda Centenary College, Rahara<br> <small>(2022 - Present)</small></p>
+            <p>Current SGPA : 9.46 <br> CGPA (Ongoing) : 8.75</p>
+          </li>
+          <li>
+            <h4><i class="fas fa-school"></i> Higher Secondery</h4>
+            <p>Kamalpore High School (2022)</p>
+            <p>Focus: PCM with Computer Sciennce (76.8%)</p>
+          </li>
+          <li>
+            <h4><i class="fas fa-school"></i> Secondery</h4>
+            <p>Kamalpore High School (2020)</p>
+            <p>Obtained Marks : 89.72%</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skills & Experience Column -->
+      <div class="skills">
+        <h3><i class="fas fa-tools"></i> Experience</h3>
+        <ul>
+          <li>
+            <h4><i class="fas fa-code"></i> <a href="http://buddhanka.in">Buddhanka Institute</a></h4>
+            <p>I. Faculty of Computer Science and Application<br> <i><sub><small>(Apr' 2024 to Present)</small></sub></i><br>
+              II. Front-End Designer and Develepor <i><sub><small>(Nov' 2024 to Present)</small></sub></i></p>
+          </li>
+          <li>
+            <h4><i class="fas fa-cogs"></i> University Of Calcutta</h4>
+            <p>I. Quantum Computing Research Intern at A.K. Choudhury School of Information Technology<br>
+              <i><sub><small>(Oct' 2023 to Present)</small></sub></i></p>
+          </li>
+          <li>
+            <h4><i class="fas fa-cogs"></i> RKMVCC </h4>
+            <p>I. Designer for Anual Tech Fest (Intra and Inter)<br>
+              <i><sub><small>(Feb' 2024 to Oct' 2024)</small></sub></i></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+  
+      <!-- Quantum Computing Projects -->
+      <div class="project-category">
+        <h3>Quantum Computing</h3>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="qpu.gif" alt="Bloch Sphere">
+            </div>
+            <h4>Pulser Star Classifier</h4>
+            <p>Pourpus of project : NIT Rourkela QuCAM Workshop, Classification of palsur stars with multiple feachures extracted from given Dataset</p>
+            <a href="https://github.com/NishankaDas/Quantum_Computing/tree/main/SVM/Pulsar" class="btn">Learn More</a>
+          </div>
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="qpu.gif" alt="Bloch Sphere">
+            </div>
+            <h4>Quantum Finance : A Fraud Prediction Model</h4>
+            <p>Quantum Support Vector Machine with a comparison of Classical Support Vector Machine resulting significent advantage in loss minimization in Quantum Version.</p>
+            <a href="Report.pdf" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Machine Learning Projects -->
+      <div class="project-category">
+        <h3>Machine Learning</h3>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="thb.gif" alt="Bloch Sphere">
+            </div>
+            <h4>Multispectral Image Segmentation using U-Net</h4>
+            <p>Explored water body segmentation for pattern recognition.</p>
+            <a href="projects/project3.html" class="btn">Learn More</a>
+          </div>
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="thb.gif" alt="Bloch Sphere">
+            </div>
+            <h4>Hand Written Number Classification</h4>
+            <p>Built a CNN model for image classification using TensorFlow.</p>
+            <a href="projects/project4.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IDP Projects -->
+      <div class="project-category">
+        <h3>Interdeciplinary</h3>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="psy.png" alt="Bloch Sphere">
+            </div>
+            <h4>Personality Test by Psychoanalysis</h4>
+            <p>Explored quantum neural networks for pattern recognition.</p>
+            <a href="projects/project3.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Web & Designing Projects -->
+      <div class="project-category">
+        <h3>Web & Designing</h3>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="buddhanka-logo.png" alt="Bloch Sphere">
+            </div>
+            <h4>Portfolio Website</h4>
+            <p>Designed and developed this responsive portfolio website.</p>
+            <a href="projects/project5.html" class="btn">Learn More</a>
+          </div>
+          <div class="project-card">
+            <div class="bloch-sphere">
+              <img src="fig.png" alt="Bloch Sphere">
+            </div>
+            <h4>UI/UX Design</h4>
+            <p>Created user-friendly designs for a mobile app using Figma.</p>
+            <a href="projects/project6.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CV Section -->
+<section id="download-cv" class="section">
+    <div class="container">
+      <h2>Download My CV</h2>
+      <p>Feel free to download my CV to learn more about my skills and experience.</p>
+      <a href="NDas.pdf" download class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me via email or connect with me on social media.</p>
+    <div class="social-links">
+      <a href="mailto:nishanka.das.rkmvcc@gmail.com" class="social-link" title="Email">
+        <img src="mail.png" alt="Email Icon">
+      </a>
+      <a href="https://www.linkedin.com/in/nishanka-das" target="_blank" class="social-link" title="LinkedIn">
+        <img src="lkdn.png" alt="LinkedIn Icon">
+      </a>
+      <a href="https://twitter.com/your-twitter" target="_blank" class="social-link" title="Twitter">
+        <img src="x.jpg" alt="Twitter Icon">
+      </a>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Nishanka. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
