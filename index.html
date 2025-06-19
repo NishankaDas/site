@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="icon" type="image/png" href="favi.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #3e2723;
+      color: #f5f5dc;
+      text-decoration: none;
+    }
+    header {
+      background-color: #4e342e;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ffcc80;
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: #e0cfc2;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffcc80;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #ffcc80;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      border-bottom: 2px solid #ffcc80;
+      display: inline-block;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, #ffcc80, #e0a96d);
+      color: #3e2723;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px #ffcc80;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #4e342e;
+      margin-top: 2rem;
+    }
+    .links a {
+      margin: 0 0.5rem;
+      color: #ffcc80;
+      text-decoration: none;
+    }
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-img {
+      flex-shrink: 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffcc80;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .project-item {
+      background-color: #5d4037;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+    }
+    #cv {
+      text-align: center;
+    }
+    #cv h2 {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .about-text {
+        width: 100%;
+      }
+    }
+   .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.5s ease, z-index 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(2);
+      z-index: 10;
+      position:relative;
+      box-shadow: 0 0 30px #ffcc80;
+    }
+    .card {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      margin: 1rem 0;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .card img {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+      flex: 1;
+    }
+    .card-content strong {
+      font-weight: bold;
+      color: #ffcc80;
+    }
+    a.stylish-link {
+  color: #ffcc80;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a.stylish-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #ffcc80;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+a.stylish-link:hover {
+  color: #ffe0b2;
+}
+
+a.stylish-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nishanka Das</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#cv">Download CV</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="favi.png" alt="My Photo" class="about-img" />
+      <div class="about-text">
+        <p>I’m Nishanka Das, an M.Sc. Computer Science student at Ramakrishna Mission Vivekananda Educational and Research Institute, Belur. My focus is on Quantum Computing and Quantum Algorithms, and I’m currently working on Quantum Walks under the guidance of Prof. Amlan Chakrabarti (University of Calcutta) and Dr. Amit Saha (Irina, Paris). I'm deeply passionate about Theoretical Computer Science 
+          and aspire to become a researcher and teacher in the future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <img src="veri.png" alt="University Logo">
+      <div class="card-content">
+        <p><strong>Ramakrishna Mission Vivekananda Educational and Research Institute, Belur, India </strong><br>M.Sc. in Computer Science <br>2025 - Present</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="vc.jpg" alt="University Logo">
+      <div class="card-content">
+        <p><strong>Ramakrishna Mission Vivekananda Centenary College, Rahara, India</strong><br>B.Sc. (Hons.) in Computer Science <br> Undergraduate Thesis : "Simulation and Analysis of Quantum Algorithms through GPU Computing"<br>Supervisor : Prof. (Dr.) Amlan Chakrabarti, Director, AKCSIT <br> <i>CGPA : 9.07</i> (2022 - 2025)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <img src="cu.jpg" alt="Company Logo">
+      <div class="card-content">
+        <p><strong>A.K. Choudhury School of Information Technology, University of Calcutta</strong><br>Quantum Computing Research Intern - (Oct'23 - May'25)<br>Worked on CUDA Quantum by NVIDIA. Made a python library to convert CUDAQ to Qiakit and simulated various quantum algorithms.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="bud.jpeg" alt="Company Logo">
+      <div class="card-content">
+        <p><strong>Buddhanka Institute</strong><br>Volenteer Teaching Faculy and Web Developer -  (Apr'24 - Mar'25)<br>Taought Class VI- XII for WBBSE,WBBHSC and CBSC.<br> Visit <strong>buddhanka.in</strong> for more information</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    
+    <div class="project-item">
+      <h3>CUDA Quantum to Qiskit Code Converter <a href="https://github.com/NishankaDas/cudaq_to_qiskit" target="_blank" class="stylish-link">(Link)</a></h3>
+      <p>This project bridges CUDA-Q and Qiskit by introducing an AST-based translation library, enabling seamless code conversion. It allows CUDA-Q users to access IBM’s quantum hardware without major rewrites, promoting interoperability, accelerating algorithm development, and fostering a more unified, efficient, and flexible quantum computing ecosystem across diverse platforms.</p>
+    </div>
+    <div class="project-item">
+      <h3>Psychoinformatics with R <a href="https://github.com/NishankaDas/Psychoinformatics" target="_blank" class="stylish-link">(Link)</a></h3>
+      <p>To study human behavior, data was collected from 31 participants by asking them 25 questions related to their behavior. These questions were grouped into 5 categories Agreeableness, Conscientiousness, Extraversion, Neuroticism, and Openness with 5 questions in each category. A heatmap was generated in R to visualize the behavioral patterns.</p>
+    </div>
+  </section>
+
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+    <p>I enjoy Photography and Painting. For Photography I use Canon 3000D 18-55mm Lense dedicated to nature with architcture and I like to follow Jamini Roy style digital painting. Here are some glimpses of my work:</p>
+    <div class="gallery">
+      <img src="gallery/pi1.jpg" alt="Photography 1">
+      <img src="gallery/pi2.jpg" alt="Photography 2">
+      <img src="gallery/p1.jpg" alt="Painting 1">
+      <img src="gallery/p2.jpg" alt="Painting 2">
+    </div>
+  </section>
+
+  <section id="cv">
+    <a href="cv.pdf" class="btn" download>📄 Download My CV</a>
+  </section>
+
+  <section id="links">
+    <h2>Links</h2>
+    <div class="links">
+      <a href="https://github.com/NishankaDas" target="_blank" class="stylish-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/nishanka-das/" target="_blank" class="stylish-link">LinkedIn</a>
+      <a href="mailto:you@example.com">Email</a>
+       <p style="margin-top: 1rem; color: #e0cfc2;">🏠︎ Khamargachi, Balagarh, Hooghly, <br> West Bengal, India, PIN - 712515 <br> ☏ +91 9432191900</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const options = {
+      threshold: 0.3
+    };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
